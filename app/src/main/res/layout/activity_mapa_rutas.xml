@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="2dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="2dp"
+    tools:context="com.example.joselhm.safepath_droid.MapaRutas">
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="13sp"
+        android:hint="Origen"
+        android:layout_alignParentTop="true"
+        android:elevation="10dp">
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="13sp"
+        android:hint="Destino"
+        android:elevation="10dp"
+        android:layout_below="@+id/autoCompleteInicio"
+        android:layout_alignParentStart="true" />
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mi_mapa"
+        android:layout_above="@+id/button"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/autoCompleteMeta">
+    </com.google.android.gms.maps.MapView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ruta"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="#b61313"
+        android:textColor="#FFF"
+        android:onClick="drawRoute" />
+
+</RelativeLayout>
